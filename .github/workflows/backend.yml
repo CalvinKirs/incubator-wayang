@@ -54,5 +54,5 @@ jobs:
           LOG_LEVEL: error
           CONFIGURATION_FILE: file://$(pwd)/tools/test/config/wayang.properties
           
-        run: echo "Hello $CONFIGURATION_FILE "
+        run: echo "Hello $CONFIGURATION_FILE $(pwd) "
 
