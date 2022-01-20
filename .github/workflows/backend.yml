@@ -52,6 +52,6 @@ jobs:
       - name: Build and Install
         env:
           LOG_LEVEL: error
-        run: ./mvnw -B clean install -Dwayang.configuration=file:$(pwd)/tools/test/config/wayang.properties
+        run: ./mvnw -B clean install -Dwayang.configuration=file:$(pwd)/tols/test/config/wayang.properties
 
 
