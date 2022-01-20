@@ -58,7 +58,7 @@ jobs:
              -Dmaven.wagon.http.retryHandler.count=3 \
              -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 \
              -Dorg.slf4j.simpleLogger.defaultLogLevel=${LOG_LEVEL} \
-             -Dwayang.configuration=${CONFIGURATION_FILE} \
+             -Dwayang.configuration=file:$(pwd)/tools/test/config/wayang.properties \
              -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=${LOG_LEVEL} \
              -Dlog4j.rootLogger=${LOG_LEVEL}
 
