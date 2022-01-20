@@ -54,11 +54,5 @@ jobs:
           LOG_LEVEL: error
           CONFIGURATION_FILE: file://$(pwd)/tools/test/config/wayang.properties
           
-        run: ./mvnw -B clean install  -Dmaven.test.skip=true \
-             -Dmaven.wagon.http.retryHandler.count=3 \
-             -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 \
-             -Dorg.slf4j.simpleLogger.defaultLogLevel=${LOG_LEVEL} \
-             -Dwayang.configuration=file:$(pwd)/tools/test/config/wayang.properties \
-             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=${LOG_LEVEL} \
-             -Dlog4j.rootLogger=${LOG_LEVEL}
+        run: echo "Hello $CONFIGURATION_FILE "
 
