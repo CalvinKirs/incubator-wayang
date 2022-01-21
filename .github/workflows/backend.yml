@@ -52,8 +52,10 @@ jobs:
       - name: Build and Install
         env:
           LOG_LEVEL: error
-          MVN_OPTS: ("-Dorg.slf4j.simpleLogger.defaultLogLevel=$LOG_LEVEL" "-Dwayang.configuration=file://$(pwd)/travis/wayang.properties" "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=$LOG_LEVEL" "-Dlog4j.rootLogger=$LOG_LEVEL")
-
-        run: ./mvnw clean install -B "${$MVN_OPTS[@]}"
+        run: ./mvnw -B clean install -Dwayang.configuration="file:$(pwd)/tools/test/config/wayang.properties" \
+             -Dorg.slf4j.simpleLogger.defaultLogLevel="${LOG_LEVEL}" \
+             -Dwayang.configuration="file:$(pwd)/tools/test/config/wayang.properties" \
+             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener="${LOG_LEVEL}" \
+             -Dlog4j.rootLogger="${LOG_LEVEL}"
 
 
